@@ -49,7 +49,7 @@ ARTICLE: { "warp" } "Warp Notation"
     "reading code, as a way to ease the transition into "
     "writing fully RP-like code." $nl
     "It should also be obvious that this can be used to write "
-    "ridiculous, obfuscated code with this, so like with all "
+    "ridiculous, obfuscated code, so like with all "
     "syntax-rewrite parse words, use warp responsibly."
     { $heading "Examples" } $nl
     { $list
