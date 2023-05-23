@@ -1,6 +1,7 @@
 ! Copyright (C) 2023 0xFC963F18DC21.
 ! See https://factorcode.org/license.txt for BSD license.
-USING: generalizations help help.syntax help.markup ;
+USING: help help.syntax help.markup ;
+USING: generalizations sequences.generalizations ;
 IN: warp
 
 HELP: ~(
@@ -44,7 +45,6 @@ HELP: ~V{
     { $syntax "W ~V{ elements... }" } ;
 
 ARTICLE: { "warp" } "Warp Notation"
-    { $heading "Overview" } $nl
     "The " { $vocab-link "warp" } " vocabulary emulates the effect of "
     "Warp Notation found in all of the concatenative scripting languages "
     "that have appeared in the Creeper World series for custom content "
@@ -55,7 +55,7 @@ ARTICLE: { "warp" } "Warp Notation"
         { "PRPL (" { $url "https://knucklecracker.com/wiki/doku.php?id=pf:prpl_information" } ")" }
     }
     $nl
-    "Warp notation is a compile-time syntax rewrite, usually "
+    "Warp Notation is a compile-time syntax rewrite, usually "
     "delimited with single parentheses pairs. However, since "
     "that is already taken by stack effect declarations, "
     "a tilde next to a parenthesis "
@@ -80,25 +80,35 @@ ARTICLE: { "warp" } "Warp Notation"
     "writing fully RP-like code." $nl
     "It should also be obvious that this can be used to write "
     "ridiculous, obfuscated code, so like with all "
-    "syntax-rewrite parse words, use warp responsibly."
-    { $heading "Examples" } $nl
-    { $list
-        {
-            "Binary words can be made 'infix' using warp notation: "
-            { $snippet "2 - ~( 1 )" }
-            " is equivalent to "
-            { $snippet "2 1 -" } "."
-        }
-        {
-            "Rearranging conditionals into an order "
-            "more closely matching other languages' "
-            "conditional structures:"
-            { $code
-                "when ~( 1 > ~( 0 ) ) ~["
-                "    print ~( \"Everything is all good.\" )"
-                "]"
+    "syntax-rewrite parse words, use Warp Notation responsibly."
+    { $examples
+        { $list
+            {
+                "Binary words can be made 'infix' using Warp Notation: "
+                { $snippet "2 - ~( 1 )" }
+                " is equivalent to "
+                { $snippet "2 1 -" } "."
+            }
+            {
+                "Rearranging conditionals into an order "
+                "more closely matching other languages' "
+                "conditional structures (both code blocks "
+                "are equivalent in function):"
+                $nl
+                { $code
+                    "1 0 > ["
+                    "    \"Everything is all good.\" print"
+                    "] when"
+                }
+                { $code
+                    "when ~( 1 > ~( 0 ) ) ~["
+                    "    print ~( \"Everything is all good.\" )"
+                    "]"
+                }
             }
         }
     } ;
 
 ABOUT: { "warp" }
+
+\ ~( \ ~[ \ ~B{ \ ~H{ \ ~L{ \ ~V{ 6 narray related-words
