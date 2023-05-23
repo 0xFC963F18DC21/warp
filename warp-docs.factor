@@ -95,7 +95,7 @@ ARTICLE: { "warp" } "Warp Notation"
             "conditional structures:"
             { $code
                 "when ~( 1 > ~( 0 ) ) ~["
-                "    \"Everything is all good.\" print"
+                "    print ~( \"Everything is all good.\" )"
                 "]"
             }
         }
