@@ -5,34 +5,42 @@ IN: warp
 
 HELP: ~(
     { $description "Starts warping the notation of the previous word until " { $link \ ) } "." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~( elements... )" } ;
 
 HELP: )
     { $description "Ends warping the notation of the word before the matching " { $link \ ~( } "." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax ")" } ;
 
 HELP: ~[
     { $description "Shorthand for " { $snippet "~( [" } ", but warps until " { $link \ ] } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~[ elements... ]" } ;
 
 HELP: ~{
     { $description "Shorthand for " { $snippet "~( {" } ", but warps until " { $link \ } } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~{ elements... }" } ;
 
 HELP: ~B{
     { $description "Shorthand for " { $snippet "~( B{" } ", but warps until " { $link \ } } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~B{ elements... }" } ;
 
 HELP: ~L{
     { $description "Shorthand for " { $snippet "~( L{" } ", but warps until " { $link \ } } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~L{ elements... }" } ;
 
 HELP: ~H{
     { $description "Shorthand for " { $snippet "~( H{" } ", but warps until " { $link \ } } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~H{ elements... }" } ;
 
 HELP: ~V{
     { $description "Shorthand for " { $snippet "~( V{" } ", but warps until " { $link \ } } " instead." }
+    { $notes "See " { $link { "warp" } } " for more information." }
     { $syntax "W ~V{ elements... }" } ;
 
 ARTICLE: { "warp" } "Warp Notation"
@@ -57,13 +65,14 @@ ARTICLE: { "warp" } "Warp Notation"
     " is also provided, along with a few other versions for "
     "other data structures."
     $nl
-    "Its effect is effectively an inductive rewrite:" $nl
+    "Its effect is effectively a variable-magnitude nrot, "
+    "such that all of these following lines are equivalent:" $nl
     { $code
-        "   W ~( w1 w2 ... wn )"
-        "=> w1 W ~( w2 ... wn )"
-        "=> w1 w2 W ~( ... wn )"
+        "    W ~( w1 w2 ... wn )"
+        "=== w1 W ~( w2 ... wn )"
+        "=== w1 w2 W ~( ... wn )"
         "..."
-        "=> w1 w2 ... wn W"
+        "=== w1 w2 ... wn W"
     }
     "This allows for some shuffling of syntax to provide "
     "a 'less-concatenative' interface for writing and "
