@@ -9,11 +9,31 @@ HELP: ~(
 
 HELP: )
     { $description "Ends warping the notation of the word before the matching " { $link \ ~( } "." }
-    { $syntax "W ~( elements... )" } ;
+    { $syntax ")" } ;
 
 HELP: ~[
     { $description "Shorthand for " { $snippet "~( [" } ", but warps until " { $link \ ] } " instead." }
     { $syntax "W ~[ elements... ]" } ;
+
+HELP: ~{
+    { $description "Shorthand for " { $snippet "~( {" } ", but warps until " { $link \ } } " instead." }
+    { $syntax "W ~{ elements... }" } ;
+
+HELP: ~B{
+    { $description "Shorthand for " { $snippet "~( B{" } ", but warps until " { $link \ } } " instead." }
+    { $syntax "W ~B{ elements... }" } ;
+
+HELP: ~L{
+    { $description "Shorthand for " { $snippet "~( L{" } ", but warps until " { $link \ } } " instead." }
+    { $syntax "W ~L{ elements... }" } ;
+
+HELP: ~H{
+    { $description "Shorthand for " { $snippet "~( H{" } ", but warps until " { $link \ } } " instead." }
+    { $syntax "W ~H{ elements... }" } ;
+
+HELP: ~V{
+    { $description "Shorthand for " { $snippet "~( V{" } ", but warps until " { $link \ } } " instead." }
+    { $syntax "W ~V{ elements... }" } ;
 
 ARTICLE: { "warp" } "Warp Notation"
     { $heading "Overview" } $nl
@@ -34,7 +54,8 @@ ARTICLE: { "warp" } "Warp Notation"
     { $link \ ~( }
     " will be used instead. For shorthand usage with quotations, "
     { $link \ ~[ }
-    " is also provided."
+    " is also provided, along with a few other versions for "
+    "other data structures."
     $nl
     "Its effect is effectively an inductive rewrite:" $nl
     { $code
@@ -54,7 +75,7 @@ ARTICLE: { "warp" } "Warp Notation"
     { $heading "Examples" } $nl
     { $list
         {
-            "Binary operators can be made 'infix' using warp notation: "
+            "Binary words can be made 'infix' using warp notation: "
             { $snippet "2 - ~( 1 )" }
             " is equivalent to "
             { $snippet "2 1 -" } "."
@@ -62,8 +83,8 @@ ARTICLE: { "warp" } "Warp Notation"
         {
             "Rearranging conditionals into a more common order:"
             { $code
-                "when ~( x > ~( y ) ) ~["
-                "    \"X is greater than Y\" print"
+                "when ~( 1 > ~( 0 ) ) ~["
+                "    \"Everything is all good.\" print"
                 "]"
             }
         }
