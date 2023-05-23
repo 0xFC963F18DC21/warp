@@ -1,6 +1,6 @@
 ! Copyright (C) 2023 0xFC963F18DC21.
 ! See https://factorcode.org/license.txt for BSD license.
-USING: help help.syntax help.markup ;
+USING: generalizations help help.syntax help.markup ;
 IN: warp
 
 HELP: ~(
@@ -52,7 +52,7 @@ ARTICLE: { "warp" } "Warp Notation"
     { $list
         { "CRPL (" { $url "https://knucklecracker.com/wiki/doku.php?id=crpl:overview#warp_notation" } ")" }
         { "4RPL (" { $url "https://knucklecracker.com/wiki/doku.php?id=4rpl:overview#warp_notation" } ")" }
-        "PRPL"
+        { "PRPL (" { $url "https://knucklecracker.com/wiki/doku.php?id=pf:prpl_information" } ")" }
     }
     $nl
     "Warp notation is a compile-time syntax rewrite, usually "
@@ -65,7 +65,7 @@ ARTICLE: { "warp" } "Warp Notation"
     " is also provided, along with a few other versions for "
     "other data structures."
     $nl
-    "Its effect is effectively a variable-magnitude nrot, "
+    "Its effect is effectively a variable-magnitude " { $link nrot } ", "
     "such that all of these following lines are equivalent:" $nl
     { $code
         "    W ~( w1 w2 ... wn )"
@@ -90,7 +90,9 @@ ARTICLE: { "warp" } "Warp Notation"
             { $snippet "2 1 -" } "."
         }
         {
-            "Rearranging conditionals into a more common order:"
+            "Rearranging conditionals into an order "
+            "more closely matching other languages' "
+            "conditional structures:"
             { $code
                 "when ~( 1 > ~( 0 ) ) ~["
                 "    \"Everything is all good.\" print"
